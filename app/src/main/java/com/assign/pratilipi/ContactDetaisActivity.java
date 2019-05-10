@@ -33,9 +33,9 @@ public class ContactDetaisActivity extends AppCompatActivity {
     }
 
     private void updateUI(Contact contact) {
-        setData(contact.getContactName(), mName,2);
-        setData(contact.getContactNumber(), mMobile,3);
-        setData(contact.getEmail(), mEmail,4);
+        setData(contact.getContactName(), mName);
+        setData(contact.getContactNumber(), mMobile);
+        setData(contact.getEmail(), mEmail);
         if (contact.getPhotoUri() != null)
             Glide.with(this)
                     .load(contact.getPhotoUri())
@@ -43,14 +43,14 @@ public class ContactDetaisActivity extends AppCompatActivity {
                     .into(mNameIv);
     }
 
-    private void setData(String value, TextView tv,int i) {
+    private void setData(String value, TextView tv) {
         Log.d("ContactDetails", "value is" + value);
         if (value != null)
             tv.setText(value);
     }
 
     private void showToast(int i) {
-        Toast.makeText(this, "Something went wrong!"+i+" is null", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Something went wrong!" + i + " is null", Toast.LENGTH_SHORT).show();
     }
 
     private void initViews() {
